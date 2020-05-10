@@ -1,4 +1,4 @@
-FROM node:dubnium as builder
+FROM node:erbium as builder
 
 RUN apt-get update && \
     apt-get install python2.7 && \
@@ -8,18 +8,18 @@ ADD package*.json /tmp/frontend/
 ADD public /tmp/frontend/public
 ADD src /tmp/frontend/src
 RUN cd /tmp/frontend && \
-    npm install && \
+    npm ci && \
     npm run build
 
 
-FROM node:dubnium-alpine
+FROM node:erbium-alpine
 
 RUN addgroup -S nodejs && adduser -S nodejs -G nodejs && \
     mkdir /app && \
     mkdir -p /tmp/backend
 ADD package*.json /tmp/backend/
 RUN cd /tmp/backend && \
-    npm install --production && \
+    npm ci --production && \
     chown -R nodejs.nodejs /app /tmp/backend
 
 USER nodejs

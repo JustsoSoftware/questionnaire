@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  questionnaire:
+    build: .
+    environment:
+      - DB_URL=mysql://root:secret-mariadb-password@mariadb:3306/questionnaire
+      - AUTH_SECRET=my-super-secret-token
+      - NODE_ENV=production
+      - PORT=8080
+    ports:
+      - 8080:8080
+
+  mariadb:
+    image: mariadb
+    user: 1000:1000
+    volumes:
+      - ./db/conf:/etc/mysql/mysql.d:ro
+      - ./db/data:/var/lib/mysql:rw
+      - ./db/init:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret-mariadb-password
+
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_HOST=mariadb
+    ports:
+      - 8081:80
