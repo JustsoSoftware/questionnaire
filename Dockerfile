@@ -1,8 +1,5 @@
 FROM node:14 as builder
 
-RUN apt-get update && \
-    apt-get install python2.7 && \
-    ln -sf /usr/bin/python2.7 /usr/bin/python
 RUN mkdir -p /tmp/frontend
 ADD package*.json /tmp/frontend/
 ADD public /tmp/frontend/public
