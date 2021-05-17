@@ -1,5 +1,5 @@
 .loading:before {
-  content: url(/spinning-loader.svg);
+  content: url(../assets/spinning-loader.svg);
   z-index: 9999;
 }
 .loading {
