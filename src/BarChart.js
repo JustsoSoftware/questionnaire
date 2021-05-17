@@ -69,13 +69,13 @@ class BarChart extends Component {
       .interpolate(interpolateLab)
 
     const bars = data.map(datum => <rect
-        key={datum[this.xKey]}
-        x={xScale(datum[this.xKey])}
-        y={yScale(datum[this.yKey])}
-        height={svgDimensions.height - margins.bottom - this.yScale(datum[this.yKey])}
-        width={xScale.bandwidth()}
-        fill={colorScale(datum[this.yKey])}
-      />)
+      key={datum[this.xKey]}
+      x={xScale(datum[this.xKey])}
+      y={yScale(datum[this.yKey])}
+      height={svgDimensions.height - margins.bottom - this.yScale(datum[this.yKey])}
+      width={xScale.bandwidth()}
+      fill={colorScale(datum[this.yKey])}
+    />)
 
     const height = svgDimensions.height - margins.top - margins.bottom
     const step = xScale.step()
@@ -88,16 +88,16 @@ class BarChart extends Component {
       />
       <g className="stats">
         {this.props.avg && this.props.stddev && <rect x={margins.left + (this.props.avg - this.props.stddev + 0.5) * step}
-              y={margins.top}
-              width={2 * this.props.stddev * step}
-              height={height}
-              fill="rgba(64,64,64,0.2)"
+          y={margins.top}
+          width={2 * this.props.stddev * step}
+          height={height}
+          fill="rgba(64,64,64,0.2)"
         />}
         {this.props.avg && <line x1={margins.left + (this.props.avg + 0.5) * step}
-              x2={margins.left + (this.props.avg + 0.5) * step}
-              y1={margins.top}
-              y2={margins.top + height}
-              stroke="red" strokeWidth={2}
+          x2={margins.left + (this.props.avg + 0.5) * step}
+          y1={margins.top}
+          y2={margins.top + height}
+          stroke="red" strokeWidth={2}
         />}
       </g>
     </svg>)

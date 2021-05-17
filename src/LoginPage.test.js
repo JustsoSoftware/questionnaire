@@ -74,7 +74,7 @@ describe('Login page', () => {
 
   it('redirects if already logged in', () => {
     const store = mockStore({misc: {error: '', isLoggedIn: true}})
-    const wrapper = shallow(<LoginPage store={store} location={{state: {from: {pathname: "/loggedIn"}}}}/>)
+    const wrapper = shallow(<LoginPage store={store} location={{state: {from: {pathname: '/loggedIn'}}}}/>)
     const redirect = wrapper.dive().find(Redirect)
     expect(redirect.length).toEqual(1)
     expect(redirect.prop('to').pathname).toEqual('/loggedIn')

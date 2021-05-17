@@ -23,8 +23,8 @@ import './Analytics.css'
 class Analytics extends Component {
   render() {
     return this.props.data
-        ? <BarChart category={1} data={this.props.data} xKey="date" yKey="num" />
-        : null
+      ? <BarChart category={1} data={this.props.data} xKey="date" yKey="num" />
+      : null
   }
 }
 

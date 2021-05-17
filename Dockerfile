@@ -1,4 +1,4 @@
-FROM node:erbium as builder
+FROM node:14 as builder
 
 RUN apt-get update && \
     apt-get install python2.7 && \
@@ -12,7 +12,7 @@ RUN cd /tmp/frontend && \
     npm run build
 
 
-FROM node:erbium-alpine
+FROM node:14-alpine
 
 RUN addgroup -S nodejs && adduser -S nodejs -G nodejs && \
     mkdir /app && \

@@ -22,7 +22,7 @@ import QuestionReport from './QuestionReport' // eslint-disable-line no-unused-v
 import PropTypes from 'prop-types'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
-import "react-tabs/style/react-tabs.css"
+import 'react-tabs/style/react-tabs.css'
 import Analytics from './Analytics'
 
 class ReportPage extends Component {

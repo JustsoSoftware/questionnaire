@@ -60,8 +60,8 @@ class QRoundForm extends Component {
       <div className="form-group">
         <label>Name der Befragung</label>
         <input className="form-control"
-               defaultValue={this.props.qround.name || ''}
-               onChange={e => this.handleChange('name', e.target.value)}
+          defaultValue={this.props.qround.name || ''}
+          onChange={e => this.handleChange('name', e.target.value)}
         />
       </div>
 
@@ -79,11 +79,11 @@ class QRoundForm extends Component {
       <div className="qround-url printOnly">{url}</div>
 
       <ReportPage title={`Auswertung der Runde '${this.props.qround.name || startDate}'`}
-                  questionnaire={this.props.questionnaire}
-                  stats={this.props.stats}
-                  category={+this.state.category}
-                  setCategory={category => this.setCategory(category)}
-                  analytics={this.props.stats && this.props.stats.analytics}
+        questionnaire={this.props.questionnaire}
+        stats={this.props.stats}
+        category={+this.state.category}
+        setCategory={category => this.setCategory(category)}
+        analytics={this.props.stats && this.props.stats.analytics}
       />
 
       <div className="btn-toolbar">

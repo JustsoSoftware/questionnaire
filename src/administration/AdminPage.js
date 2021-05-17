@@ -126,8 +126,8 @@ class AdminPage extends Component {
             </div>
             {this.state.activePanel === 1 &&
             <QRoundList questionnaire={this.props.match.params.questionnaire}
-                        activeQRound={this.state.activeQRound}
-                        setActiveQRound={activeQRound => this.setActiveQRound(activeQRound)}
+              activeQRound={this.state.activeQRound}
+              setActiveQRound={activeQRound => this.setActiveQRound(activeQRound)}
             />}
           </div>
 
@@ -137,17 +137,17 @@ class AdminPage extends Component {
             </div>
             {this.state.activePanel === 2 &&
             <QuestionList questionnaire={this.props.match.params.questionnaire}
-                          setDetailVisibility={show => this.setDetailVisibility(show)}/>
+              setDetailVisibility={show => this.setDetailVisibility(show)}/>
             }
           </div>
 
           <div className="panel panel-default">
             <ReportPage title="Gesamtauswertung"
-                        questionnaire={this.props.match.params.questionnaire}
-                        stats={this.props.stats}
-                        category={+this.state.category}
-                        setCategory={category => this.setCategory(category)}
-                        analytics={this.props.stats && this.props.stats.analytics}
+              questionnaire={this.props.match.params.questionnaire}
+              stats={this.props.stats}
+              category={+this.state.category}
+              setCategory={category => this.setCategory(category)}
+              analytics={this.props.stats && this.props.stats.analytics}
             />
           </div>
         </div>

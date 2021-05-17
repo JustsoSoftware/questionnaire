@@ -48,13 +48,13 @@ class QuestionList extends Component {
     return this.props.error
       ? <div className="error">{this.props.error}</div>
       : <ul className="panel-body list-group" id="questionList" key="questionList">
-          {questions}
-          <li className={'list-group-item clickable' + isSelected(null)}
-            onClick={() => this.setActiveQuestion({id: null, title: '', type: 'check', options: []})}>
-            <span className="glyphicon glyphicon-plus"/>&nbsp;
-            Neue Frage anlegen
-          </li>
-        </ul>
+        {questions}
+        <li className={'list-group-item clickable' + isSelected(null)}
+          onClick={() => this.setActiveQuestion({id: null, title: '', type: 'check', options: []})}>
+          <span className="glyphicon glyphicon-plus"/>&nbsp;
+          Neue Frage anlegen
+        </li>
+      </ul>
   }
 }
 

@@ -67,10 +67,10 @@ class RadarChart extends Component {
     function getLine(entry, index) {
       const alpha = segSize * index - Math.PI / 2
       return <line key={index} stroke="#737373" strokeWidth={0.5}
-                   x1={Math.cos(alpha) * (radius - 5)}
-                   y1={Math.sin(alpha) * (radius - 5)}
-                   x2={Math.cos(alpha) * (radius * 0.2)}
-                   y2={Math.sin(alpha) * (radius * 0.2)}
+        x1={Math.cos(alpha) * (radius - 5)}
+        y1={Math.sin(alpha) * (radius - 5)}
+        x2={Math.cos(alpha) * (radius * 0.2)}
+        y2={Math.sin(alpha) * (radius * 0.2)}
       />
     }
 

@@ -74,7 +74,7 @@ module.exports = db => {
       ${innerWhere}
       GROUP BY date
       ORDER BY date`,
-      { type: db.sequelize.QueryTypes.SELECT }
+    { type: db.sequelize.QueryTypes.SELECT }
     )
 
     return {

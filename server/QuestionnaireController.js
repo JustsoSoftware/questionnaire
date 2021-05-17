@@ -70,7 +70,7 @@ module.exports = (db, reportingController) => {
 
   async function updateQuestionRound(req, res) {
     try {
-      const questionnaireId = await getQuestionnaireId(req.params.questionnaire)
+      await getQuestionnaireId(req.params.questionnaire)
       const transaction = await db.sequelize.transaction()
       const qround = await db.QRound.findById(+req.params.qround, {transaction})
       const result = await qround.update(req.body, {attributes: ['name'], transaction})

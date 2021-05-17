@@ -49,12 +49,12 @@ class QuestionnaireList extends Component {
     return this.props.error
       ? <div className="error">{this.props.error}</div>
       : <ul className="panel-body list-group" id="QRoundList" key="QRoundList">
-          {qrounds}
-          <li className="list-group-item clickable" onClick={() => this.props.createQRound(this.props.questionnaire)}>
-            <span className="glyphicon glyphicon-plus"/>&nbsp;
+        {qrounds}
+        <li className="list-group-item clickable" onClick={() => this.props.createQRound(this.props.questionnaire)}>
+          <span className="glyphicon glyphicon-plus"/>&nbsp;
             Neue Befragung starten
-          </li>
-        </ul>
+        </li>
+      </ul>
   }
 }
 

@@ -43,7 +43,7 @@ export default class Axis extends Component {
     return (
       <g
         className={`Axis Axis-${this.props.orient}`}
-        ref={(el) => { this.axisElement = el; }}
+        ref={(el) => { this.axisElement = el }}
         transform={this.props.translate}
       />
     )

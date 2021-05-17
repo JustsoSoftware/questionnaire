@@ -48,14 +48,14 @@ describe('QuestionController', () => {
         .then(() => question)
     })
     .then(question => controller.updateQuestion({
-        params: {id: question.id},
-        body: {
-          options: [
-            {id: question.options[0].id, text: 'Das ist die geänderte Version', value: 1},
-            {text: 'Das ist neu', value: 99}
-          ]
-        }
-      }, {json: result => result.toJSON()})
+      params: {id: question.id},
+      body: {
+        options: [
+          {id: question.options[0].id, text: 'Das ist die geänderte Version', value: 1},
+          {text: 'Das ist neu', value: 99}
+        ]
+      }
+    }, {json: result => result.toJSON()})
     )
     .then(result => {
       result.should.not.have.property('error')
@@ -78,9 +78,9 @@ describe('QuestionController', () => {
         .then(() => question)
     })
     .then(question => controller.updateQuestion({
-        params: {id: question.id},
-        body: {options: [{id: -1, text: 'Das ist neu', value: 99}]}
-      }, {json: result => result.toJSON()})
+      params: {id: question.id},
+      body: {options: [{id: -1, text: 'Das ist neu', value: 99}]}
+    }, {json: result => result.toJSON()})
     )
     .then(result => {
       result.should.not.have.property('error')
